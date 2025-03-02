@@ -59,7 +59,7 @@ a{
 
 /* navigation style ends */
 body {
-    background-image: url('these are some of my projects/images/bg.jpg');
+    background-image: url('bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
