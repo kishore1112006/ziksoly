@@ -151,90 +151,141 @@ img:hover {
     border-color: rgb(255, 174, 0); /* Change border color on hover */
 }
 
-#Work{
+#Work {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr; /* Always 3 columns by default */
     column-gap: 20px;
     row-gap: 30px;
-    margin-right: 20px;
-    margin-left: 20px;
-    
+    margin: 0 20px;
+    padding: 50px 0;
 }
-.projects{
-   height: 400px; 
-   background-color: rgb(81, 75, 176);
-   border: 2px solid black;
-   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5); 
-   border-radius: 20px; 
+
+.projects {
+    height: 400px;
+    background-color: rgb(81, 75, 176);
+    border: 2px solid black;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-.projects>p{
-    
-    position: relative;
-    top: 20px;
-    font-size: 3em;
-    padding: 8.5px;
+
+.projects img {
+    width: 90%;
+    height: 280px; /* Fixed height to maintain design */
+    border-radius: 15px;
+   
+    /* Ensures images fit properly */
+}
+
+.projects p {
+    font-size: 2em;
+    padding: 10px;
     text-align: center;
     background-color: #3a3d40;
     color: white;
-    border-radius: 20px; 
+    border-radius: 15px;
+    width: 90%;
+}
+
+/* Hover Effect */
+.projects:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* 📱 Responsive Design */
+
+/* For tablets (Keep images same, adjust grid) */
+@media screen and (max-width: 1024px) {
+    #Work {
+        grid-template-columns: 1fr 1fr; /* 2-column layout */
+    }
+}
+
+/* For mobile screens (Keep images same, stack in 1 column) */
+@media screen and (max-width: 600px) {
+    #Work {
+        grid-template-columns: 1fr; /* 1-column layout */
+    }
 }
 
 
-#btn{
-    padding: 20px;
-    width: 120px;
-    position: relative;
-    left: 600px;    
-    top: 70px;
-    font-size: 17px;
-    text-decoration: none;
-    color: white;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);  
-}
-#btn:hover{
-    background-color: rgb(229, 123, 123);
-    color: white;
 
-}
-#Contact{
+#Contact {
     margin-top: 200px;
     padding: 200px 0 100px 0;
     border-top: 2px solid black;
     color: white;
     background-color: #000;
-     background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
-}
-h3{
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
     text-align: center;
+}
+
+h3 {
     font-size: 70px;
     margin: 120px 90px 0 90px;
 }
-#Contact>p{
+
+#Contact > p {
     font-size: 25px;
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin: 10px 0 20px 0;
 }
-.handle{
+
+.handle {
     margin-top: 50px;
     margin-bottom: 60px;
-    text-decoration: none;
     font-size: 20px;
-    width: 800px;
-    margin-left: 250px;
+    max-width: 800px;
+    margin: auto;
     color: white;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-wrap: wrap; /* Makes it responsive */
+    justify-content: center;
+    gap: 20px;
 }
-.ha{
+
+.ha {
     color: white;
     font-size: 30px;
+    transition: color 0.3s ease-in-out;
 }
-hr{
-    border: 4px solid rgb(125, 36, 36);
+
+/* Add hover effect */
+a:hover .ha {
+    color: #f39c12; /* Changes text color on hover */
 }
+
+hr {
+    border: 4px solid rgba(125, 36, 36, 0.8);
+    width: 80%;
+    margin: auto;
+}
+
+/* Media Query for Responsive Design */
+@media screen and (max-width: 768px) {
+    h3 {
+        font-size: 50px;
+    }
+
+    #Contact > p {
+        font-size: 20px;
+    }
+
+    .handle {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ha {
+        font-size: 25px;
+    }
+}
+
 footer{
     background-color: #000;
      background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
